@@ -27,3 +27,10 @@ This README would normally document whatever steps are necessary to get your app
 
 * Repo owner or admin
 * Other community or team contact
+
+How to run:
+    -run Docker
+    -execute: gradle build distDocker --refresh-dependencies
+    -execute next to create containers on docker: docker run --expose 1111 -p 1111:1111 -it com.area/registration-service:1.0
+    -execute next to start applications: docker docker run --expose 1111 -p 1111:1111 -it com.area/registration-service:1.0
+                     docker run --expose 2222 -p 2222:2222 -it com.area/location-service:1.0

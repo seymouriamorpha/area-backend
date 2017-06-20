@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.4.RELEASE")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
+apply plugin: 'docker'
+dependencies {
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka-server', version: '1.3.1.RELEASE'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.cloud:spring-cloud-starter")
+
+}
+jar {
+    baseName = 'registration'
+    manifest { attributes "Main-Class": "com.area.registration.Application" }
+}
+docker {
+    baseImage "frolvlad/alpine-oraclejdk8:slim"
+    maintainer 'Raman Susla "catmorte@gmail.com"'
+}

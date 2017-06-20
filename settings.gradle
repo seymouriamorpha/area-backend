@@ -1,0 +1,4 @@
+rootProject.name = 'area-backend'
+include 'registration-service'
+include 'location-service'
+
