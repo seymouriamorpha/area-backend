@@ -15,7 +15,6 @@ public class Application
 {
     public static void main(String[] args) {
         System.setProperty("spring.config.name", "location-service");
-        //
         SpringApplication.run(Application.class, args);
     }
 }
